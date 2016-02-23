@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Module: primes/sieve-of-eratosthenes</title>
+    <title>JSDoc: Module: data-structures/size-balanced-tree</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Module: primes/sieve-of-eratosthenes</h1>
+    <h1 class="page-title">Module: data-structures/size-balanced-tree</h1>
 
     
 
@@ -38,14 +38,9 @@
     <div class="container-overview">
     
         
-            <div class="description">Sieve of Eratosthenes.
-
-Simple, ancient algorithm for finding all prime numbers up to given limit.
-
-Returns list of primes up to specified limit.
-
-For example, for limit 10 it should return following list of primes:
-[2, 3, 5, 7].</div>
+            <div class="description">Size balanced tree is a data structure which is
+a type of self-balancing binary search tree that use
+the tree size attribute for re-balancing the tree.</div>
         
 
         
@@ -60,55 +55,6 @@ For example, for limit 10 it should return following list of primes:
 
 
 
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>limit</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Algorithm will returns list of primes up to
-specified limit.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
 
 
 
@@ -143,7 +89,7 @@ specified limit.</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="primes_sieve-of-eratosthenes.js.html">primes/sieve-of-eratosthenes.js</a>, <a href="primes_sieve-of-eratosthenes.js.html#line4">line 4</a>
+        <a href="data-structures_size-balanced-tree.js.html">data-structures/size-balanced-tree.js</a>, <a href="data-structures_size-balanced-tree.js.html#line3">line 3</a>
     </li></ul></dd>
     
 
@@ -166,37 +112,31 @@ specified limit.</td>
 
 
 
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    Will return list with all prime numbers up to provided.
-limit.
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Array</span>
-
-
-    </dd>
-</dl>
-
-    
 
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>var sieveOfEratosthenes =
-require('path-to-algorithms/src/sieve-of-eratosthenes').sieveOfEratosthenes;
+    <pre class="prettyprint"><code>var SBTree = require('../src/data-structures/size-balanced-tree').SBTree;
+var sbTree = new SBTree();
 
-console.log(sieveOfEratosthenes(12)); // [2, 3, 5, 7, 11]</code></pre>
+var treeNode = sbTree.push({
+  name: 'John',
+  surname: 'Smith'
+});
+sbTree.insert(0, {
+  name: 'Pavlo',
+  surname: 'Popov'
+});
+sbTree.insert(1, {
+  name: 'Garry',
+  surname: 'Fisher'
+});
+sbTree.insert(0, {
+  name: 'Derek',
+  surname: 'Anderson'
+});
+
+console.log(sbTree.get(0)); // { name: 'Derek', surname: 'Anderson' }</code></pre>
 
 
 
