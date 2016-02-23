@@ -9,7 +9,7 @@ var isWin = /^win/.test(process.platform);
 var ghPages = require('gulp-gh-pages');
 
 gulp.task('deploy', function() {
-  return gulp.src('./docs/**/*').pipe(ghPages({branch: 'docs'}));
+  return gulp.src('./docs/**/*').pipe(ghPages({branch: 'gh-pages'}));
 });
 
 gulp.task('jsdoc', shell.task([
@@ -36,3 +36,4 @@ gulp.task('jscs', function () {
 });
 
 gulp.task('build', ['lint', 'jscs', 'test']);
+gulp.task('gh-pages', ['jsdoc', 'deploy']);
