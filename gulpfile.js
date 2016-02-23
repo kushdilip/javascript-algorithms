@@ -6,6 +6,11 @@ var jasmine = require('gulp-jasmine');
 var stylish = require('jshint-stylish');
 var jscs = require('gulp-jscs');
 var isWin = /^win/.test(process.platform);
+var ghPages = require('gulp-gh-pages');
+
+gulp.task('deploy', function() {
+  return gulp.src('./docs/**/*').pipe(ghPages({branch: 'docs'}));
+});
 
 gulp.task('jsdoc', shell.task([
   (isWin) ?

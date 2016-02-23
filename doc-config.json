@@ -24,7 +24,7 @@
     "opts": {
         "template": "templates/default",
         "encoding": "utf8",
-        "destination": "../javascript-algorithms-docs",
+        "destination": "docs",
         "recurse": true,
         "private": false,
         "readme": "./readme.md"
